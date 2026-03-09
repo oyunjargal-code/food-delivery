@@ -45,17 +45,35 @@ app.put("/foods/:id", async (c) => {
 
   console.log(id, title);
 
-  const newFood = {
-    id: "2",
-  };
-
-  const updateFoods = [...foods, newFood];
+  const updateFoods = foods.map((food) => {
+    if (food.id === id) {
+      const updateFood = {
+        ...food,
+        title,
+      };
+      return updateFood;
+    } else {
+      return food;
+    }
+  });
 
   foods = updateFoods;
 
   c.status(200);
 
   return c.json({ foods });
+});
+
+app.delete("/foods/:id", (c) => {
+  const id = c.req.param("id");
+
+  const deleteFoods = foods.filter((food) => food.id !== id);
+
+  foods = deleteFoods;
+
+  c.status(200);
+
+  return c.json({ success: true, foods });
 });
 
 export default app;
