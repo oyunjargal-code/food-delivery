@@ -9,7 +9,7 @@ export const putFoods = async (c: Context) => {
   console.log(id, title);
 
   const updateFoods = foods.map((food) => {
-    if (food.id === id) {
+    if (food.id == id) {
       const updateFood = {
         ...food,
         title,

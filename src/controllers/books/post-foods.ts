@@ -3,9 +3,9 @@ import { foods } from "../../model/foods";
 
 export const postFoods = async (c: Context) => {
   const { title } = await c.req.json();
-
+  const foodId = foods.length + 1;
   const newFood = {
-    id: "2",
+    id: foodId,
     title,
   };
 
