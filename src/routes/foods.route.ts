@@ -5,8 +5,9 @@ import { postFoods } from "../controllers/books/post-foods";
 import { putFoods } from "../controllers/books/put-foods";
 import { deleteFoods } from "../controllers/books/delete-foods";
 import { Bindings } from "../index";
+import { App } from "../types";
 
-export const registerFoodRoute = (app: Hono<{ Bindings: Bindings }>) => {
+export const registerFoodRoute = (app: App) => {
   app.get("/foods", getFoods);
 
   app.get("/foods/:id", getFoodById);
