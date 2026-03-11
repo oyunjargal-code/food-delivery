@@ -2,7 +2,14 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "food-delivery",
   "main": "src/index.ts",
-  "compatibility_date": "2026-03-09"
+  "compatibility_date": "2026-03-09",
+  "d1_databases": [
+    {
+      "binding": "food_delivery_prod",
+      "database_name": "food-delivery-prod",
+      "database_id": "96f81129-fb48-479b-9e77-9ae10a9b4489",
+    },
+  ],
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],
